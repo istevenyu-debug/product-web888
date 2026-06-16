@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>蝴蝶別針｜單頁式商品網頁</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: linear-gradient(135deg, #eef4ff, #ffffff);
+      color: #1f2a44;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(30, 70, 140, 0.15);
+    }
+
+    .image-area {
+      background: #f7faff;
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .image-area img {
+      width: 100%;
+      max-width: 460px;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #e6efff;
+      color: #2454a6;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      color: #17366f;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #5d6b85;
+      margin-bottom: 24px;
+    }
+
+    .selling-points {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .selling-points li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 17px;
+    }
+
+    .selling-points li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #2f6eea;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      color: #0f4fd6;
+      margin-bottom: 20px;
+    }
+
+    .price span {
+      font-size: 16px;
+      color: #7a8799;
+      font-weight: 400;
+      margin-left: 8px;
+    }
+
+    .buy-button {
+      width: 100%;
+      max-width: 260px;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1b5cff, #5b8cff);
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(27, 92, 255, 0.3);
+      transition: 0.25s;
+    }
+
+    .buy-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(27, 92, 255, 0.4);
+    }
+
+    .intro {
+      margin-top: 34px;
+      background: #f8fbff;
+      border-left: 5px solid #2f6eea;
+      padding: 22px;
+      border-radius: 16px;
+    }
+
+    .intro h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #17366f;
+    }
+
+    .intro p {
+      color: #4d5c73;
+      font-size: 16px;
+    }
+
+    .info-box {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      flex: 1;
+      min-width: 140px;
+      background: #eef4ff;
+      padding: 16px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .info-item strong {
+      display: block;
+      color: #17366f;
+      margin-bottom: 4px;
+    }
+
+    .info-item span {
+      font-size: 14px;
+      color: #66748a;
+    }
+
+    .message {
+      margin-top: 16px;
+      color: #0f4fd6;
+      font-weight: 700;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 20px 14px;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 30px;
+      }
+
+      .buy-button {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="product-card">
+
+      <!-- 商品主圖區 -->
+      <div class="image-area">
+        <img src="product.jpg" alt="藍色水鑽蝴蝶別針" />
+      </div>
+
+      <!-- 商品文字區 -->
+      <div class="content-area">
+        <div class="tag">精緻配件｜優雅亮眼</div>
+
+        <h1>蝴蝶別針</h1>
+
+        <p class="subtitle">
+          藍色水鑽光澤，讓日常穿搭多一點高雅與亮點。
+        </p>
+
+        <!-- 商品賣點 -->
+        <ul class="selling-points">
+          <li>藍色水鑽設計，閃耀但不過度誇張</li>
+          <li>蝴蝶造型優雅細緻，適合外套、襯衫、圍巾搭配</li>
+          <li>可作為日常配件，也適合宴會、送禮場合</li>
+          <li>銀色金屬底座，襯托水鑽的清透光感</li>
+          <li>小巧好搭配，輕鬆提升整體造型質感</li>
+        </ul>
+
+        <!-- 價格 -->
+        <div class="price">
+          NT$299 <span>限時優惠價</span>
+        </div>
+
+        <!-- 購買按鈕 -->
+        <button class="buy-button" onclick="buyProduct()">
+          立即購買
+        </button>
+
+        <div class="message" id="message">
+          已加入購買清單，感謝您的喜歡！
+        </div>
+
+        <!-- 商品介紹文案 -->
+        <div class="intro">
+          <h2>商品介紹</h2>
+          <p>
+            這款蝴蝶別針以藍色水鑽作為主要視覺，搭配銀色金屬線條，
+            呈現出像寶石羽翼般的閃耀感。無論別在西裝外套、針織衫、
+            襯衫領口或圍巾上，都能讓穿搭更有層次。適合喜歡優雅、
+            精緻、帶有一點華麗感的女性，也很適合作為生日禮物、
+            節日禮物或日常小禮。
+          </p>
+        </div>
+
+        <div class="info-box">
+          <div class="info-item">
+            <strong>目標客群</strong>
+            <span>喜愛精緻飾品的女性</span>
+          </div>
+
+          <div class="info-item">
+            <strong>風格</strong>
+            <span>優雅、亮眼、精品感</span>
+          </div>
+
+          <div class="info-item">
+            <strong>適用場合</strong>
+            <span>日常、宴會、送禮</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    function buyProduct() {
+      const message = document.getElementById("message");
+      message.style.display = "block";
+
+      setTimeout(function () {
+        alert("感謝您的購買！這裡可以再連接到訂購表單或購物車。");
+      }, 300);
+    }
+  </script>
+</body>
+</html>
